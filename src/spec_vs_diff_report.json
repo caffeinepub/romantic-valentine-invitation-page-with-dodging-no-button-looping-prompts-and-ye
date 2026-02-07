@@ -1,0 +1,79 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-07T05:57:52.743Z",
+  "summary": "Core Valentine invitation UI appears to be implemented with a dedicated page/component, a dodging \"No\" button with cycling prompts, and a \"Yes\" success view that includes a fireworks overlay and celebratory text. However, the required generated image assets are not present in the diff, and several extra/unrequested additions (empty backend actor, footer branding, and auth/query hooks) were introduced. Some REQ-1/REQ-2 UI text/layout details cannot be fully verified because ValentineInvite.tsx is truncated before the heading/question/buttons markup.",
+  "missing_requirements": [
+    {
+      "id": "REQ-5",
+      "requirement": "Add the required generated images to the app as static assets under frontend/public/assets/generated and render them in the UI (no backend image serving).",
+      "reason": "The UI references the required image paths, but the diff summary does not include the actual PNG files under frontend/public/assets/generated with the specified filenames.",
+      "evidence": [
+        "frontend/src/pages/ValentineInvite.tsx (references /assets/generated/valentine-bg-pattern.dim_1920x1080.png)",
+        "frontend/src/components/ValentineSuccess.tsx (references /assets/generated/valentine-bg-pattern.dim_1920x1080.png and /assets/generated/valentine-couple.dim_900x900.png)"
+      ]
+    },
+    {
+      "id": "REQ-1",
+      "requirement": "Create a single-page Valentine invitation UI with centered layout showing: large heading \"cutey\", question text \"Will you be my Valentine 💖\", and two boxed buttons labeled exactly \"Yes 💗\" and \"No\".",
+      "reason": "ValentineInvite.tsx is truncated before the name/question/buttons JSX, so the exact required strings and button labels cannot be confirmed from the provided diff summary.",
+      "evidence": [
+        "frontend/src/pages/ValentineInvite.tsx (truncated before the heading/question/buttons markup)"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "requirement": "Show a fixed-position prompt box under the name that cycles through the specified messages in order, looping after the last message back to the start of the loop.",
+      "reason": "While the message list and click-count logic are present, the diff does not clearly show (due to truncation) that the prompt box is rendered in a fixed position under the name, and the loop behavior in the effect cannot be fully validated against the exact required looping sequence from the truncated context.",
+      "evidence": [
+        "frontend/src/pages/ValentineInvite.tsx (prompt messages + looping effect present, but render/layout truncated)",
+        "frontend/src/components/NoPromptBox.tsx (prompt box component present, positioning not defined here)"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Added an empty backend Motoko actor even though backend changes were not required for this feature.",
+      "reason": "The BuildRequest states backend changes are not required; an empty actor was introduced without any invitation behavior needing backend support.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "Added a footer with © 2026 and an external link/branding (\"Built with ... caffeine.ai\") on the success page.",
+      "reason": "No footer, copyright line, or external promotional link was requested in any requirement.",
+      "evidence": [
+        "frontend/src/components/ValentineSuccess.tsx"
+      ]
+    },
+    {
+      "description": "Introduced/updated Internet Identity + React Query actor hooks and query invalidation logic unrelated to the Valentine invitation behavior.",
+      "reason": "The BuildRequest is purely frontend UI behavior with no backend APIs required; the added hooks are not requested as part of the invitation feature.",
+      "evidence": [
+        "frontend/src/hooks/useActor.ts",
+        "frontend/src/hooks/useInternetIdentity.ts",
+        "frontend/src/main.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.62,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/FireworksOverlay.tsx",
+    "frontend/src/components/NoPromptBox.tsx",
+    "frontend/src/components/ValentineSuccess.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/ValentineInvite.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

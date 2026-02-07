@@ -1,0 +1,10 @@
+{
+  "frontend/src/App.tsx": "Main app component that renders the ValentineInvite page as the single-page application entry point.",
+  "frontend/src/pages/ValentineInvite.tsx": "Core Valentine invitation page with interactive \"Yes\"/\"No\" buttons, dodging \"No\" button logic with cycling prompt messages, and state management for success view transition.",
+  "frontend/src/components/NoPromptBox.tsx": "Fixed-position prompt box component that displays playful messages under the name heading when the \"No\" button is clicked.",
+  "frontend/src/components/ValentineSuccess.tsx": "Celebration view component shown after clicking \"Yes\", displaying the couple image and congratulatory messages with romantic styling.",
+  "frontend/src/components/FireworksOverlay.tsx": "Canvas-based fireworks animation overlay that creates particle burst effects when the \"Yes\" button is clicked.",
+  "frontend/src/index.css": "Global styles with romantic Valentine theme using OKLCH colors (light pink, rose, red), custom animations for floating hearts, pulsing, bouncing, and fade-in effects.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with Valentine color tokens and Inter font family for consistent romantic theming.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder file as no backend queries are required for this purely frontend interactive application."
+}

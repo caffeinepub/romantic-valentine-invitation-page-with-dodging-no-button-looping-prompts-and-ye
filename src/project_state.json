@@ -1,0 +1,83 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Interactive romantic Valentine invitation page for 'cutey' with Yes/No choices; 'No' button dodges clicks and cycles through playful prompts, while 'Yes' triggers fireworks and celebratory message with a couple picture on a light pink, heart/rose-themed background.",
+  "architectural_notes": [
+    "Single-page interactive invitation with click handlers for Yes/No; No action cycles through a predefined message list and repositions the button each time; Yes action triggers an animation + content swap."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Seamless romantic background pattern with small red hearts and subtle rose petals on light pink (valentine-bg-pattern.dim_1920x1080.png)\n- Cute couple illustration in a romantic style with transparent background (valentine-couple.dim_900x900.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-single-page-valentine-invitation-ui-with-a-centered-layout-that-shows-1-a-large-name-heading-cutey-2-the-question-text-will-you-be-my-valentine-under-the-name-3-two-boxed-options-buttons-labeled-yes-and-no",
+      "title": "Create a single-page Valentine invitation UI with a centered layout that shows: (1) a large name heading \"cutey\"; (2) the question text \"Will you be my Valentine 💖\" under the name; (3) two boxed options/buttons labeled \"Yes 💗\" and \"No\".",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-no-button-interaction-on-each-click-move-the-no-button-to-a-different-position-within-a-bounded-on-screen-area-so-it-remains-visible-clickable-and-show-a-fixed-position-prompt-box-under-the-name-that-cycles-through-the-specified-messages-in-order-looping-after-the-last-message-back-to-the-start-of-the-loop",
+      "title": "Implement the \"No\" button interaction: on each click, move the \"No\" button to a different position within a bounded on-screen area (so it remains visible/clickable) and show a fixed-position prompt box under the name that cycles through the specified messages in order, looping after the last message back to the start of the loop.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-yes-button-interaction-when-clicked-display-a-fireworks-animation-effect-and-replace-overlay-the-main-content-with-celebratory-text-a-large-yay-headline-followed-by-i-know-you-d-say-yes-and-you-ve-made-me-the-happiest-and-show-a-couple-picture",
+      "title": "Implement the \"Yes 💗\" button interaction: when clicked, display a fireworks animation effect and replace/overlay the main content with celebratory text: a large \"Yay 🥳\" headline, followed by \"I know you'd say Yes!💖\" and \"You've made me the Happiest ☺️\", and show a couple picture.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-consistent-romantic-visual-theme-across-the-page-light-pink-background-red-hearts-rose-decorative-elements-and-cohesive-typography-and-spacing-that-feels-like-a-valentine-invitation-avoid-blue-purple-styling",
+      "title": "Apply a consistent romantic visual theme across the page: light pink background, red hearts/rose decorative elements, and cohesive typography and spacing that feels like a Valentine invitation (avoid blue/purple styling).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-required-generated-images-to-the-app-as-static-assets-under-frontend-public-assets-generated-and-render-them-in-the-ui-no-backend-image-serving",
+      "title": "Add the required generated images to the app as static assets under frontend/public/assets/generated and render them in the UI (no backend image serving).",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create Valentine invitation UI with large name 'cutey', question text, and two boxed buttons: 'Yes 💗' and 'No'.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Implement 'No' button behavior: move to new positions on each click and show a fixed-position prompt box under the name cycling through specified messages in a loop.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Implement 'Yes' button behavior: trigger fireworks animation and show celebratory texts ('Yay 🥳', 'I know you'd say Yes!💖', 'You've made me the Happiest ☺️') and display a couple image.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Apply romantic theme styling: light pink background with red hearts/rose elements and overall romantic look.",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Romantic Valentine invitation page with dodging No button, looping prompts, and Yes fireworks celebration",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

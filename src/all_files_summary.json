@@ -1,0 +1,19 @@
+{
+  "backend/main.mo": "Empty Motoko actor with no backend logic.",
+  "feature_evidence.json": "Feature evidence listing implemented Valentine UI features and related files.",
+  "frontend-file-summaries.txt": "Text file containing prewritten summaries of key frontend source files.",
+  "frontend/index.css": "Global Tailwind-based theme variables and styling defaults for light and dark modes.",
+  "frontend/index.html": "Base HTML document providing root mount and script entry for the frontend app.",
+  "frontend/src/App.tsx": "Simple wrapper that renders the ValentineInvite page.",
+  "frontend/src/components/FireworksOverlay.tsx": "Canvas component generating animated particle-based fireworks.",
+  "frontend/src/components/NoPromptBox.tsx": "Card component showing playful prompt text when the No button is clicked.",
+  "frontend/src/components/ValentineSuccess.tsx": "Full‑screen celebration view with hearts, messages, and couple image.",
+  "frontend/src/hooks/useActor.ts": "Hook that creates and manages a backend actor instance tied to identity changes.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Internet Identity auth context and provider handling login, logout, and identity state.",
+  "frontend/src/hooks/useQueries.ts": "Empty placeholder file for potential future backend queries.",
+  "frontend/src/index.css": "Defines Tailwind base layers, a Valentine-themed color palette with CSS variables, dark mode variants, custom utilities, and animations for floating and pulsing effects.",
+  "frontend/src/main.tsx": "Bootstraps the React app, wrapping App with React Query and InternetIdentityProvider, and loads global styles.",
+  "frontend/src/pages/ValentineInvite.tsx": "Implements the interactive Valentine invitation page with moving 'No' button, prompt cycling, floating heart decorations, and fireworks/success screen on 'Yes'.",
+  "frontend/tailwind.config.js": "Configures Tailwind with custom Valentine color tokens, extended theme settings, plugins, and added animations and container options.",
+  "project_state.json": "Stores meta information about the Valentine project including features, requirements, visuals, and current project state notes."
+}

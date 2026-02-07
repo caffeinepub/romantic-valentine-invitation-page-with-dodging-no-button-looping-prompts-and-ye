@@ -1,0 +1,119 @@
+{
+  "kind": "build_request",
+  "title": "Romantic Valentine invitation page with dodging No button, looping prompts, and Yes fireworks celebration",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a single-page Valentine invitation UI with a centered layout that shows: (1) a large name heading \"cutey\"; (2) the question text \"Will you be my Valentine 💖\" under the name; (3) two boxed options/buttons labeled \"Yes 💗\" and \"No\".",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "First a name 'cutey' show in large size Then under the name the 1st question is 'Will you be my Valentine 💖' Then it have two options in boxes the options are 'Yes 💗' or 'No' ."
+        ]
+      },
+      "acceptanceCriteria": [
+        "The page renders a large \"cutey\" title above the question text.",
+        "Two clearly boxed buttons exist with exact labels: \"Yes 💗\" and \"No\".",
+        "Layout is centered and readable on both mobile and desktop."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement the \"No\" button interaction: on each click, move the \"No\" button to a different position within a bounded on-screen area (so it remains visible/clickable) and show a fixed-position prompt box under the name that cycles through the specified messages in order, looping after the last message back to the start of the loop.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "If I click on 'No' Then the option is move to another position and an another text pop up in a box  in a fix posion under the name ' Wait......are you Sure? 🥺' . When I click on 'No' again it change its position and  pop up 'Really 🤨' in that new box Then a lopp start from here to it change its position and turn into  'Try Again ! 😜' Then 'You sure? 😶' Then 'Haha nice Try! 😁' Then 'No Escape'  then 'You can't escape Love 😍' then 'Still no ? Really? 😔' Then 'You are testing my patience😮‍💨' then 'Nope not happening 🤪' then 'Really 🤨' and this loop continue."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Clicking \"No\" repositions the \"No\" button each time (not overlapping the edges; remains within the visible container).",
+        "A single prompt box in a fixed position under the name updates its text on each \"No\" click.",
+        "The first two \"No\" clicks display exactly: (1) \"Wait......are you Sure? 🥺\" then (2) \"Really 🤨\".",
+        "After that, subsequent \"No\" clicks cycle through (in order) and loop: \"Try Again ! 😜\", \"You sure? 😶\", \"Haha nice Try! 😁\", \"No Escape\", \"You can't escape Love 😍\", \"Still no ? Really? 😔\", \"You are testing my patience😮‍💨\", \"Nope not happening 🤪\", \"Really 🤨\" (then repeats from \"Try Again ! 😜\")."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Implement the \"Yes 💗\" button interaction: when clicked, display a fireworks animation effect and replace/overlay the main content with celebratory text: a large \"Yay 🥳\" headline, followed by \"I know you'd say Yes!💖\" and \"You've made me the Happiest ☺️\", and show a couple picture.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "If I choose 'Yes ❤️ ' suddenly some fireworks happen then a text pop up 'Yay 🥳' in large size and a text under it ' I know you'd say Yes!💖' and a  couple picture pop up and a text 'You've made me the Happiest ☺️ '."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Clicking \"Yes 💗\" triggers a visible fireworks animation (particle/confetti/firework bursts) without page reload.",
+        "After clicking \"Yes 💗\", the UI shows \"Yay 🥳\" in large size.",
+        "After clicking \"Yes 💗\", the UI shows the exact supporting lines: \"I know you'd say Yes!💖\" and \"You've made me the Happiest ☺️\".",
+        "A couple picture is displayed on the success view."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Apply a consistent romantic visual theme across the page: light pink background, red hearts/rose decorative elements, and cohesive typography and spacing that feels like a Valentine invitation (avoid blue/purple styling).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "I want the background is in light pink color and some red heart rose , overall I want the thame look like romantic"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Default background is light pink.",
+        "Decorative heart/rose visuals are visible without interfering with readability or button clicks.",
+        "Overall styling is consistent across normal and success (Yes) states and does not use blue/purple as primary theme colors."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Add the required generated images to the app as static assets under frontend/public/assets/generated and render them in the UI (no backend image serving).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "some red heart rose , overall I want the thame look like romantic",
+          "and a  couple picture pop up"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Generated images exist at frontend/public/assets/generated with the specified filenames.",
+        "The romantic background decorative image is used in the main invitation view.",
+        "The couple image is displayed in the \"Yes\" success view.",
+        "No backend endpoints are introduced for serving images."
+      ]
+    }
+  ],
+  "constraints": [
+    "Use English for any user-facing text in the build request.",
+    "Frontend immutable paths must not be edited: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui.",
+    "Backend must remain a single Motoko actor if any backend changes are made (backend changes are not required for this feature)."
+  ],
+  "nonGoals": [
+    "User accounts, saving responses, or persisting state across sessions.",
+    "Third-party auth beyond Internet Identity.",
+    "Realtime/multiplayer features.",
+    "Backend APIs for the invitation behavior."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Seamless romantic background pattern with small red hearts and subtle rose petals on light pink (valentine-bg-pattern.dim_1920x1080.png)",
+      "Cute couple illustration in a romantic style with transparent background (valentine-couple.dim_900x900.png)"
+    ],
+    "edits": []
+  }
+}

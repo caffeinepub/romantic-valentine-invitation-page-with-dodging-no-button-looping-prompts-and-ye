@@ -1,0 +1,145 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Valentine invitation single-page UI with dodging No button and Yes fireworks celebration",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Build a centered single-page Valentine invitation view with the \"cutey\" heading, the question text, and boxed \"Yes 💗\"/\"No\" buttons.",
+      "acceptanceCriteria": [
+        "The page renders a large \"cutey\" title above the question text.",
+        "Two clearly boxed buttons exist with exact labels: \"Yes 💗\" and \"No\".",
+        "Layout is centered and readable on both mobile and desktop."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the app’s main UI rendering the Valentine invitation view (single-page). Ensure the centered layout includes: a large \"cutey\" heading, the question \"Will you be my Valentine 💖\", and two clearly boxed buttons labeled exactly \"Yes 💗\" and \"No\". Use shadcn-ui components (e.g., Button/Card) to achieve consistent boxed controls; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/ValentineInvite.tsx",
+          "operation": "create",
+          "description": "Create a dedicated Valentine invitation page component containing the base layout structure (title, question, and button row) and expose event handlers/state hooks for interactions. Use shadcn-ui components for boxed UI elements; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/InviteLayout.tsx",
+          "operation": "create",
+          "description": "Create a reusable layout wrapper that centers content, handles responsive spacing/typography, and provides a consistent invitation card-like container. Use shadcn-ui styling patterns where appropriate; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Make the \"No\" button dodge to random positions within a visible bounded area and show a fixed-position prompt box that cycles and loops through the specified messages on each click.",
+      "acceptanceCriteria": [
+        "Clicking \"No\" repositions the \"No\" button each time (not overlapping the edges; remains within the visible container).",
+        "A single prompt box in a fixed position under the name updates its text on each \"No\" click.",
+        "The first two \"No\" clicks display exactly: (1) \"Wait......are you Sure? 🥺\" then (2) \"Really 🤨\".",
+        "After that, subsequent \"No\" clicks cycle through (in order) and loop: \"Try Again ! 😜\", \"You sure? 😶\", \"Haha nice Try! 😁\", \"No Escape\", \"You can't escape Love 😍\", \"Still no ? Really? 😔\", \"You are testing my patience😮‍💨\", \"Nope not happening 🤪\", \"Really 🤨\" (then repeats from \"Try Again ! 😜\")."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ValentineInvite.tsx",
+          "operation": "modify",
+          "description": "Implement \"No\" click behavior: (1) compute a new random position for the \"No\" button within a bounded container so it remains fully visible/clickable; (2) update a single fixed-position prompt box located under the name heading. Ensure message sequencing: first click shows exactly \"Wait......are you Sure? 🥺\", second click shows exactly \"Really 🤨\", then loop through the provided list starting at \"Try Again ! 😜\" and repeating after the last message. Use shadcn-ui (e.g., Card/Alert-like styling) for the prompt box; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/hooks/useDodgingButton.ts",
+          "operation": "create",
+          "description": "Create a hook to manage bounded random repositioning for the \"No\" button (container ref + button ref measurements) and expose the computed style/position updates for each click."
+        },
+        {
+          "path": "frontend/src/components/NoPromptBox.tsx",
+          "operation": "create",
+          "description": "Create a fixed-position prompt box component that renders under the name heading and displays the current prompt message with romantic styling. Use shadcn-ui components for a boxed look; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "On \"Yes 💗\" click, show a fireworks animation and replace/overlay the invitation with a celebratory success view including exact text and a couple picture.",
+      "acceptanceCriteria": [
+        "Clicking \"Yes 💗\" triggers a visible fireworks animation (particle/confetti/firework bursts) without page reload.",
+        "After clicking \"Yes 💗\", the UI shows \"Yay 🥳\" in large size.",
+        "After clicking \"Yes 💗\", the UI shows the exact supporting lines: \"I know you'd say Yes!💖\" and \"You've made me the Happiest ☺️\".",
+        "A couple picture is displayed on the success view."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ValentineInvite.tsx",
+          "operation": "modify",
+          "description": "Implement \"Yes 💗\" click behavior: switch UI into a success state that overlays/replaces the main invitation content with the celebratory copy (large \"Yay 🥳\", plus \"I know you'd say Yes!💖\" and \"You've made me the Happiest ☺️\") and renders the couple image from frontend/public/assets/generated/valentine-couple.dim_900x900.png. Trigger fireworks animation on transition without reloading the page."
+        },
+        {
+          "path": "frontend/src/components/FireworksOverlay.tsx",
+          "operation": "create",
+          "description": "Create a fireworks animation overlay component (e.g., canvas-based particle bursts) that can be shown/hidden by the success state and layered above the themed background while keeping text readable."
+        },
+        {
+          "path": "frontend/src/components/ValentineSuccess.tsx",
+          "operation": "create",
+          "description": "Create a success view component rendering the exact celebratory text and the couple picture. Keep typography large and romantic, and ensure it visually fits within the same centered layout system as the invitation view."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Apply a cohesive romantic theme (light pink background, red hearts/rose decorations, Valentine typography/spacing) across both normal and success states while avoiding blue/purple as primary colors.",
+      "acceptanceCriteria": [
+        "Default background is light pink.",
+        "Decorative heart/rose visuals are visible without interfering with readability or button clicks.",
+        "Overall styling is consistent across normal and success (Yes) states and does not use blue/purple as primary theme colors."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Add global styling for the romantic theme: set a light pink default background, define cohesive typography/spacing defaults, and ensure primary accents are red/pink (avoid blue/purple as primary theme colors). Include utility classes or CSS variables used by the invitation/success components for consistent theming."
+        },
+        {
+          "path": "frontend/src/components/InviteLayout.tsx",
+          "operation": "modify",
+          "description": "Apply themed layout styling to keep content readable over decorations (e.g., semi-opaque card background, consistent padding/radius), ensuring decorative visuals do not block button clicks and the theme remains consistent in both invitation and success states."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme tokens (if needed) with romantic pink/red color aliases and subtle shadows/gradients used by the invitation UI, ensuring the primary palette avoids blue/purple."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Add required generated images as static assets under frontend/public/assets/generated and render them in the invitation (background decoration) and success view (couple image) without any backend image serving.",
+      "acceptanceCriteria": [
+        "Generated images exist at frontend/public/assets/generated with the specified filenames.",
+        "The romantic background decorative image is used in the main invitation view.",
+        "The couple image is displayed in the \"Yes\" success view.",
+        "No backend endpoints are introduced for serving images."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/valentine-bg-pattern.dim_1920x1080.png",
+          "operation": "create",
+          "description": "Add the generated static asset file exactly at frontend/public/assets/generated/valentine-bg-pattern.dim_1920x1080.png for the romantic background pattern."
+        },
+        {
+          "path": "frontend/public/assets/generated/valentine-couple.dim_900x900.png",
+          "operation": "create",
+          "description": "Add the generated static asset file exactly at frontend/public/assets/generated/valentine-couple.dim_900x900.png for the couple illustration."
+        },
+        {
+          "path": "frontend/src/pages/ValentineInvite.tsx",
+          "operation": "modify",
+          "description": "Wire frontend/public/assets/generated/valentine-bg-pattern.dim_1920x1080.png into the main invitation view as a decorative background layer/pattern while preserving readability and clickability of the buttons."
+        },
+        {
+          "path": "frontend/src/components/ValentineSuccess.tsx",
+          "operation": "modify",
+          "description": "Ensure the success view renders the couple illustration using the static asset at frontend/public/assets/generated/valentine-couple.dim_900x900.png and that it displays well on mobile and desktop."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-single-page-valentine-invitation-ui-with-a-centered-layout-that-shows-1-a-large-name-heading-cutey-2-the-question-text-will-you-be-my-valentine-under-the-name-3-two-boxed-options-buttons-labeled-yes-and-no",
+      "featureTitle": "Create a single-page Valentine invitation UI with a centered layout that shows: (1) a large name heading \"cutey\"; (2) the question text \"Will you be my Valentine 💖\" under the name; (3) two boxed options/buttons labeled \"Yes 💗\" and \"No\".",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/ValentineInvite.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-the-no-button-interaction-on-each-click-move-the-no-button-to-a-different-position-within-a-bounded-on-screen-area-so-it-remains-visible-clickable-and-show-a-fixed-position-prompt-box-under-the-name-that-cycles-through-the-specified-messages-in-order-looping-after-the-last-message-back-to-the-start-of-the-loop",
+      "featureTitle": "Implement the \"No\" button interaction: on each click, move the \"No\" button to a different position within a bounded on-screen area (so it remains visible/clickable) and show a fixed-position prompt box under the name that cycles through the specified messages in order, looping after the last message back to the start of the loop.",
+      "files": [
+        "frontend/src/components/NoPromptBox.tsx",
+        "frontend/src/pages/ValentineInvite.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-the-yes-button-interaction-when-clicked-display-a-fireworks-animation-effect-and-replace-overlay-the-main-content-with-celebratory-text-a-large-yay-headline-followed-by-i-know-you-d-say-yes-and-you-ve-made-me-the-happiest-and-show-a-couple-picture",
+      "featureTitle": "Implement the \"Yes 💗\" button interaction: when clicked, display a fireworks animation effect and replace/overlay the main content with celebratory text: a large \"Yay 🥳\" headline, followed by \"I know you'd say Yes!💖\" and \"You've made me the Happiest ☺️\", and show a couple picture.",
+      "files": [
+        "frontend/src/components/FireworksOverlay.tsx",
+        "frontend/src/components/ValentineSuccess.tsx",
+        "frontend/src/pages/ValentineInvite.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-consistent-romantic-visual-theme-across-the-page-light-pink-background-red-hearts-rose-decorative-elements-and-cohesive-typography-and-spacing-that-feels-like-a-valentine-invitation-avoid-blue-purple-styling",
+      "featureTitle": "Apply a consistent romantic visual theme across the page: light pink background, red hearts/rose decorative elements, and cohesive typography and spacing that feels like a Valentine invitation (avoid blue/purple styling).",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-the-required-generated-images-to-the-app-as-static-assets-under-frontend-public-assets-generated-and-render-them-in-the-ui-no-backend-image-serving",
+      "featureTitle": "Add the required generated images to the app as static assets under frontend/public/assets/generated and render them in the UI (no backend image serving).",
+      "files": [
+        "frontend/src/components/ValentineSuccess.tsx",
+        "frontend/src/pages/ValentineInvite.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    }
+  ]
+}
